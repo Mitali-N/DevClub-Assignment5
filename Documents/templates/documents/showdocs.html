@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Documents</li>
+        </ol>
+    </nav>
+    <h2>{{ request.session.course }}: Documents <img src="/documents.png"> </h2>
+
+    {% if request.session.usertype == 'instructor' %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="container" style="text-align: right;">
+            <input class="btn btn-outline-dark" type="submit" value="+ Upload document">
+        </div>
+    </form>
+    {% endif %}
+ 
+    <br>
+    <ul class="list-group list-group-flush">
+        {% for doc in coursedocs %}
+        <li class="list-group-item">
+            &emsp; &emsp; <img src="/floppydisk.png"> {{ doc.docname }} <br>
+            &emsp; &emsp; <a href="{{ doc.document.url }}">{{ doc.document }}</a>
+            <br>
+        </li>
+        <br>
+        {% endfor %}
+    </ul>
+    <br><br><br>
+{% endblock %}
