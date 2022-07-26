@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <title>
+            DevClub Moodle
+        </title>
+    </head>
+    <body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZNVwUAUf_8z4GvhIG2pisggzuK_8AjFPZrQ&usqp=CAU');">
+        <nav class="navbar navbar-expand-lg bg-primary">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1" style="font-size: 200%; color: white;">
+                <img src="../../android-chrome-512x512.png" alt="" width="30" height="30" class="d-inline-block" style="background-color: white;">
+                <a href="/Users/home/" style="color: white; text-decoration: none;">DevClub Moodle</a>
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="font-size: 115%;">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/messages/" style="color: white;">Messages</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/Users/logout_user/" style="color: white;">Logout</a>
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+        </nav>
+        <div class="container" style="background-color: white; height: 100%; overflow: auto;">
+            {% if messages %}
+                {% for message in messages %}
+                   <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+                {% endfor %}
+            {% endif %}
+                      <br><br>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create Quiz</li>
+        </ol>
+    </nav>
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="eg1" class="col-sm-2 col-form-label">Enter Assessment Name:</label>
+            <input type="text" class="form-control" value="{{ request.session.assessment }}" aria-describedby="Disabled input example" disabled readonly>
+        </div>
+        <div class="mb-3">
+            <label for="eg2" class="col-sm-2 col-form-label">Enter Weightage of assessment:</label>
+            <input type="text" class="form-control" value="{{ request.session.weightage }}" aria-describedby="Disabled input example" disabled readonly>
+        </div>
+        <div class="mb-3">
+            <label for="eg3" class="form-label">Enter Question:</label>
+            <textarea class="form-control" name="question" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="eg4" class="col-sm-2 col-form-label">Enter Marks for question:</label>
+            <input type="text" class="form-control" name="marks" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg5" class="col-sm-2 col-form-label">Enter option 1:</label>
+            <input type="text" class="form-control" name="op1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg6" class="col-sm-2 col-form-label">Enter option 2:</label>
+            <input type="text" class="form-control" name="op2" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg7" class="col-sm-2 col-form-label">Enter option 3:</label>
+            <input type="text" class="form-control" name="op3" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg8" class="col-sm-2 col-form-label">Enter option 4:</label>
+            <input type="text" class="form-control" name="op4" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg9" class="col-sm-2 col-form-label">Enter answer:</label>
+            <input type="text" class="form-control" name="ans" aria-describedby="emailHelp">
+        </div>
+
+        <input type="submit" value="Add Question" class="btn btn-primary">
+        <a class="btn btn-warning" href="/Quizzes/quizcreated" role="button">Finish</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Grades</li>
+        </ol>
+    </nav>
+    <h1>{{ request.session.course }}: Upload Student Grades</h1>
+    <br><br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input class="btn btn-primary" type="submit" value="Upload marks for assessment" name="marks">
+        <br> <br>
+        <input class="btn btn-primary" type="submit" value="Upload Final Grades" name="marks">
+    </form>
+{% endblock %}

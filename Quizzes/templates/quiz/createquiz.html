@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Create Quiz</li>
+        </ol>
+    </nav>
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="eg1" class="col-sm-2 col-form-label">Enter Assessment Name:</label>
+            <input type="text" class="form-control" name="assessment" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg2" class="col-sm-2 col-form-label">Enter Weightage of assessment:</label>
+            <input type="text" class="form-control" name="weightage" aria-describedby="emailHelp">
+        </div>
+
+        <input type="submit" value="+ Add Question" class="btn btn-primary">
+    </form>
+{% endblock %}

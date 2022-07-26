@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Quizzes</li>
+    </ol>
+</nav>
+<h2>{{ request.session.course }}: Quizzes <img src="/quiz.png"> </h2>
+<br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="list-group">
+            {% for assessment in assessmentlist %}
+                <a href="#" class="list-group-item list-group-item-action"><input type="submit" class="btn btn-link" name="assessment" value="{{ assessment }}"></a>
+            {% endfor %}
+        </div>
+        <!--<div class="mb-3">
+            <label for="eg2" class="form-label">Enter assessment name:</label>
+            <input type="text" class="form-control" name="assessment" aria-describedby="emailHelp">
+        </div>
+        <input type="submit" value="Submit" class="btn btn-secondary">
+    <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    The current link item
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+  <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+  <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+  <a class="list-group-item list-group-item-action disabled">A disabled link item</a>
+</div>-->
+    </form>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Grades</li>
+        </ol>
+    </nav>
+    <h2>{{ request.session.course }}: Grades <img src="/grades.png"> </h2>
+    <br>
+    <h4>User Report: {{info.name }} </h4>
+    <h5 style="font-weight: normal;">Student ID: {{ request.user.username }}</h5>
+    <br><br><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Assessment</th>
+                <th scope="col">Marks Obtained</th>
+                <th scope="col">Weightage</th>
+                <th scope="col">Maximum Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in table %}
+                <tr>
+                    <th scope="row">{{ record.assessment }} </th>
+                    <td>{{ record.marks }} </td>
+                    <td>{{ record.weightage }}</td>
+                    <td>{{ record.total_marks }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br><br><br><br>
+{% endblock %}

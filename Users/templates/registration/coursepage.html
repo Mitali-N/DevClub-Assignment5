@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ request.session.course }}</li>
+        </ol>
+    </nav>
+    <h1>{{ request.session.course }}  {{ courseinfo.course_desc }}</h1>
+    <br><br>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <h5 style="font-weight: normal;"><img src="/announcement.png">  <a href="/announcements">Announcements</a></h5>
+        </li>
+        <br>
+        
+        <li class="list-group-item">
+            <h5 style="font-weight: normal;"><img src="/documents.png">  <a href="/docs/">Documents</a></h5>
+        </li>
+        <br>
+
+        {% if request.session.usertype == 'student' %}
+        <li class="list-group-item">
+            <h5 style="font-weight: normal;"><img src="/grades.png">  <a href="/Users/course_grades">Grades</a></h5>
+        </li>
+        {% endif %}
+        {% if request.session.usertype == 'instructor' %}
+        <li class="list-group-item">
+            <h5 style="font-weight: normal;"><img src="/grades.png">  <a href="/Users/course_grades">Upload Student Grades</a></h5>
+        </li>
+        {% endif %}
+
+        <br>
+        {% if request.session.usertype == 'student' %}
+        <li class="list-group-item">
+            <h5 style="font-weight: normal;"><img src="/quiz.png">  <a href="/Quizzes/quiz">Quizzes</a></h5>
+        </li>
+        {% endif %}
+        {% if request.session.usertype == 'instructor' %}
+        <li class="list-group-item">
+            <h5 style="font-weight: normal;"><img src="/quiz.png">  <a href="/Quizzes/createquiz/">Create a Quiz</a></h5>
+        </li>
+        {% endif %}
+    </ul>
+    <br><br><br><br><br>
+{% endblock %}

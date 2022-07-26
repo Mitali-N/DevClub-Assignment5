@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+        <li class="breadcrumb-item"><a href="/Users/course_grades/">Grades</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Upload Marks</li>
+        </ol>
+    </nav>
+    <h1>{{ request.session.course }}: Upload Student Marks</h1>
+    <br>
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="eg1" class="form-label">Enter Student ID:</label>
+            <input type="text" class="form-control" name="studentID" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg2" class="form-label">Enter assessment name:</label>
+            <input type="text" class="form-control" name="assessment" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg3" class="form-label">Enter weightage:</label>
+            <input type="text" class="form-control" name="weightage" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg4" class="form-label">Enter maximum marks:</label>
+            <input type="text" class="form-control" name="total_marks" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <label for="eg5" class="form-label">Enter marks:</label>
+            <input type="text" class="form-control" name="marks" aria-describedby="emailHelp">
+        </div>
+
+        <input type="submit" value="Upload" class="btn btn-secondary">
+    </form>
+{% endblock %}
