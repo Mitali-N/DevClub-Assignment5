@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+        
+{% block content%}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Gradesheet</li>
+    </ol>
+  </nav>
+<br><br>
+    <div class="container">
+        <h2 style="text-align: center;"><img src="/favicon-32x32.png">DevClub</h2>
+        <h3 style="text-align: center;">Gradesheet</h3>
+        <br><br>
+        <h5>Student Name: <span style="font-weight:normal">{{ studentinfo.name }}</span></h5>
+        <h5>Student ID: <span style="font-weight:normal">{{ studentinfo.student_id }}</span></h5>
+        <br><br>
+        <!--<p>
+            {% for course in courses %}
+                {{ course }}
+            {% endfor %}
+            <br>
+            {% for grade in studentGrades %}
+                {{ grade.grade }}
+            {% endfor %}
+        </p>-->
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Course</th>
+                {% for course in courses %}
+                    <th scope="col">{{ course }}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Credit</th>
+                {% for credit in credits %}
+                    <td>{{ credit }}</td>
+                {% endfor %}
+              </tr>
+              
+              <tr>
+                <th scope="row">Grade</th>
+                {% for grade in studentGrades %}
+                    <td>{{ grade.grade }}</td>
+                {% endfor %}
+              </tr>
+              
+              <tr>
+                <th scope="row"></th>
+                    <td></td>
+                    <td></td>
+                    <td style="color: crimson; font-weight: bold;">CGPA: {{ cg }}</td>
+              </tr>
+            </tbody>
+          </table>
+        <br><br><br><br>
+        <p style="text-align:right;">Verified by Dean of Academics</p>
+        <br><br>
+    </div>
+{% endblock %}

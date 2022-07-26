@@ -13,9 +13,31 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+from django.contrib import admin, auth
+from django.urls import path, include
+
+from django.conf import settings
+from django.conf.urls.static import static
+from django.views.generic.base import RedirectView
+
+
+import sys
+sys.path.append('../')
+
+from Documents import views as doc_views
+from Communication import views as com_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('', RedirectView.as_view(url='/Users/login_user/'), name='login-redirect'),
+    path('Users/', include('django.contrib.auth.urls')),
+    path('Users/',include('Users.urls')),
+    path('docs/', doc_views.docs, name="docs"),
+    path('upload/', doc_views.upload, name="upload"),
+    path('announcements',com_views.announce, name='announcements'),
+    path('make_announcement',com_views.makeannounce, name='makeannounce'),
+    path('messages/',com_views.messenger, name='messages'),
+    path('newmessage/',com_views.newmessage, name='newmessage'),
+    path('Quizzes/',include('Quizzes.urls')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

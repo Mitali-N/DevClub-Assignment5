@@ -1,0 +1,31 @@
+{% extends 'basewithoutnav.html' %}
+
+{% block content %}
+  <div class="container" id="loginpage" style="text-align: center;">
+    <h1 style="color: #105fa3;">Welcome to DevClub Moodle! <img src="/favicon-32x32.png" alt=""></h1> 
+    <br> <br>
+    <h1>Login</h1>
+    <br/>
+    <form action="" method=POST>
+        {% csrf_token %}
+        
+            <div class="mb-3">
+            <div class="row justify-content-md-center">
+            <div class="col-3">
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+            </div></div></div>
+            <div class="mb-3">
+            <div class="row justify-content-md-center">
+            <div class="col-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div></div></div>
+            
+        <input type="submit" value="Log in" class="btn btn-secondary">
+    </form>
+    <br/><br/>
+    Forgot Password? <a href="mailto:ph1210818@iitd.ac.in?subject=Forgot%20Moodle%20Password&body=Username:%20(add%20username%20here)">Send an email to admin.</a>
+    <br> Note: Your username is your institute ID.
+  </div>
+{% endblock %}

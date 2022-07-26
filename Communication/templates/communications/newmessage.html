@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="eg4" class="form-label">To:</label>
+        <input type="text" class="form-control" name="recipient" aria-describedby="emailHelp" placeholder="Enter ID of recipient">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="new"></textarea>
+    </div>
+
+    <input type="submit" value="Send" class="btn btn-secondary">
+</form>
+{% endblock %}

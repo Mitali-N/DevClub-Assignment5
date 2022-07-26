@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="padding-left: 2%; text-align: center;">{{ request.session.assessment }}</h1>
+    <h2 style="padding-left: 2%;">Your Result:</h2>
+    <div class="container" style="padding-left: 3%; padding-top: 2%;">
+        <p style="color: #cf0606;">Marks obtained: {{ score }} </p>
+        <u>Test statistics:</u> <br>
+        Correct attempts: {{ correct }} <br>
+        Wrong attempts: {{ wrong }} <br>
+        Maximum marks: {{ max_marks }} <br>
+        Weightage of assessment: {{ weightage }} <br>
+    </div>
+    <div class="container" style="text-align: right;"><a href="/Users/coursepage/">Go back to Coursepage-></a></div>
+{% endblock %}

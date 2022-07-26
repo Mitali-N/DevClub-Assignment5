@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Announcements</li>
+        </ol>
+    </nav>
+    <h2>{{ request.session.course }}: Announcements <img src="/announcement.png"> </h2>
+    
+    {% if request.session.usertype == 'student' %}
+    <br><br><br>
+    {% endif %}
+
+    {% if request.session.usertype == 'instructor' %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="container" style="text-align: right;">
+            <input class="btn btn-outline-dark" value="+ Make an announcement" type="submit">
+        </div> 
+        <br>
+    </form>
+    {% endif %}
+
+    <ul class="list-group">
+        {% for field in query %}
+        <li class="list-group-item">
+            <!--{% for id in instids %}{% if "Instructor Object ("|add:id|add:")" == field.instructor %} {{ id }} {% endif %}{% endfor %} on {{ field.datetime }}:-->
+            Instructor at {{ field.datetime }} wrote:
+            <br>
+            {{ field.announcement }}
+            <br><br>
+        </li>
+        {% endfor %}
+    </ul>
+    <br><br><br><br>
+{% endblock %}

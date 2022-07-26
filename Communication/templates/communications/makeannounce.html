@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Users/home/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Users/coursepage/">{{ request.session.course }}</a></li>
+        <li class="breadcrumb-item"><a href="/announcements">Announcements</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Make Announcement</li>
+        </ol>
+    </nav>
+    <br>
+    <form action="" method="POST" >
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Announcement:</label>
+            <textarea class="form-control" name="announce" rows="5"></textarea>
+        </div>
+
+        <input type="submit" value="Make announcement" class="btn btn-secondary">
+    </form>
+{% endblock %}

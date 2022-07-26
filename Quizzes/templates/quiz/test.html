@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="padding-left: 3%;">{{ request.session.assessment }}</h1>
+    <div class="container" style="text-align: right; font-style: italic;">Maximum marks: {{ max }} <br>Weightage: {{ weightage }}</div>
+    <div class="container" style="padding-left: 5%;">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% for q in questions %}
+            <div class="form-group">
+                <label for="question">{{q.question}}</label>
+                <p style="font-style: italic;">({{ q.marks }} marks)</p>
+            </div>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{q.question}}" id="flexRadioDefault1" value="{{ q.op1 }}">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        {{ q.op1 }}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{ q.question }}" id="flexRadioDefault2" value="{{ q.op2 }}">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        {{ q.op2 }}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{ q.question }}" id="flexRadioDefault3" value="{{ q.op3 }}">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        {{ q.op3 }}
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="{{ q.question }}" id="flexRadioDefault4" value="{{ q.op4 }}">
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        {{ q.op4 }}
+                    </label>
+                </div>
+            </div>
+            <br>
+        {% endfor %}
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+</div>
+{% endblock %}
