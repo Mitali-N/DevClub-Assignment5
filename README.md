@@ -7,22 +7,29 @@ Users are of three types:
 - Student
 - Instructor
 - Admin
+![login page](/Readme_images/Login_page.png)
 
 ### Student View:
+![student home](/Readme_images/Student_Home.png)
 The home page consists of cards containing links to the pages of all the courses the student has been registered for, a link to view the student's gradesheet and a navbar containing the 'messages' tab and an option to logout.
 
+![student coursepage](/Readme_images/Student_Coursepage.png)
 The coursepage for each course has 4 tabs: 
 1. Announcements (displays all the course announcements by the instructor)
 2. Documents (displays all the documents uploaded by the instructor)
 3. Grades (displays marksheet of the student containing summary of the marks scored by the student in each assessment of the course)
 4. Quizzes (displays list of online tests/quizzes conducted in the course- a test can be attempted only once; the test can be attempted by clicking on it. After submitting the test the result page is shown)
 
+![messenger](/Readme_images/Messenger.png)
 'Messages' leads to the personal messenger for the user, where the user can text another user via their student/instructor ID, a 6 digit number unique to every user.
+
 Clicking on 'DevClub Moodle' in the navbar leads to the home page for the user.
 
 ### Instructor View:
+![Instructor Home](/Readme_images/Instr_Home.png)
 The instructor home page is almost identical to the student home page, the only difference being that there is no 'gradesheet' section.
 
+![Instructor Coursepage](/Readme_images/Instr_Coursepage.png)
 The coursepage for each course that the instructor teaches has 4 tabs:
 1. Announcements (displays all the course announcements by the instructor and the instructor can make new announcements as well)
 2. Documents (displays all the documents uploaded by the instructor, with an option to upload more documents from the instructor's local machine)
