@@ -7,20 +7,20 @@ Users are of three types:
 - Student
 - Instructor
 - Admin
-![login page](/Readme_images/Login_page.png)
+![Login Page](/Readme_images/Login_page.png)
 
 ### Student View:
-![student home](/Readme_images/Student_Home.png)
+![Student Home](/Readme_images/Student_Home.png)
 The home page consists of cards containing links to the pages of all the courses the student has been registered for, a link to view the student's gradesheet and a navbar containing the 'messages' tab and an option to logout.
 
-![student coursepage](/Readme_images/Student_Coursepage.png)
+![Student Coursepage](/Readme_images/Student_Coursepage.png)
 The coursepage for each course has 4 tabs: 
 1. Announcements (displays all the course announcements by the instructor)
 2. Documents (displays all the documents uploaded by the instructor)
 3. Grades (displays marksheet of the student containing summary of the marks scored by the student in each assessment of the course)
 4. Quizzes (displays list of online tests/quizzes conducted in the course- a test can be attempted only once; the test can be attempted by clicking on it. After submitting the test the result page is shown)
 
-![messenger](/Readme_images/Messenger.png)
+![Messenger](/Readme_images/Messenger.png)
 'Messages' leads to the personal messenger for the user, where the user can text another user via their student/instructor ID, a 6 digit number unique to every user.
 
 Clicking on 'DevClub Moodle' in the navbar leads to the home page for the user.
@@ -42,6 +42,7 @@ Marks for online quizzes are automatically uploaded to a student's marksheet.
 
 ### Admin View:
 This leads to Django's Admin site. 
+![Admin page](/Readme_images/Admin.png)
 
 Upon creating a new User, they have to be registered in either the `Students` or `Instructors` model. New courses can be added in the `Courses` model. 
 Register students or instructors for a particular course using the `Student_registration table` or `Instructor_registration table` models.
