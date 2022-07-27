@@ -12,22 +12,22 @@ Users are of three types:
 The home page consists of cards containing links to the pages of all the courses the student has been registered for, a link to view the student's gradesheet and a navbar containing the 'messages' tab and an option to logout.
 
 The coursepage for each course has 4 tabs: 
-1. announcements (displays all the course announcements by the instructor)
-2. documents (displays all the documents uploaded by the instructor)
-3. grades (displays marksheet of the student containing summary of the marks scored by the student in each assessment of the course)
-4. quizzes (displays list of online tests/quizzes conducted in the course- a test can be attempted only once; the test can be attempted by clicking on it. After submitting the test the result page is shown)
+1. Announcements (displays all the course announcements by the instructor)
+2. Documents (displays all the documents uploaded by the instructor)
+3. Grades (displays marksheet of the student containing summary of the marks scored by the student in each assessment of the course)
+4. Quizzes (displays list of online tests/quizzes conducted in the course- a test can be attempted only once; the test can be attempted by clicking on it. After submitting the test the result page is shown)
 
 'Messages' leads to the personal messenger for the user, where the user can text another user via their student/instructor ID, a 6 digit number unique to every user.
-
+Clicking on 'DevClub Moodle' in the navbar leads to the home page for the user.
 
 ### Instructor View:
 The instructor home page is almost identical to the student home page, the only difference being that there is no 'gradesheet' section.
 
 The coursepage for each course that the instructor teaches has 4 tabs:
-1. announcements (displays all the course announcements by the instructor and the instructor can make new announcements as well)
-2. documents (displays all the documents uploaded by the instructor, with an option to upload more documents from the instructor's local machine)
-3. upload student grades (has options to upload marks for a particular assessment, as well as upload the final grades for the course, for a particular student)
-4. create a quiz (instructor can create an online MCQ test by first inputting the name and weightage of the test; then keep adding questions. Once all questions have been added, click on the `Finish` button)
+1. Announcements (displays all the course announcements by the instructor and the instructor can make new announcements as well)
+2. Documents (displays all the documents uploaded by the instructor, with an option to upload more documents from the instructor's local machine)
+3. Upload Student Grades (has options to upload marks for a particular assessment, as well as upload the final grades for the course, for a particular student)
+4. Create A Quiz (instructor can create an online MCQ test by first inputting the name and weightage of the test; then keep adding questions. Once all questions have been added, click on the `Finish` button)
 ###### NOTE:
 Marks for online quizzes are automatically uploaded to a student's marksheet.
 
