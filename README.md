@@ -1,3 +1,55 @@
+# Instructions to run the project
+
+Visit the site deployed at https://floating-river-86847.herokuapp.com/
+
+Login using user credentials.
+Users are of three types:
+- Student
+- Instructor
+- Admin
+
+### Student View:
+The home page consists of cards containing links to the pages of all the courses the student has been registered for, a link to view the student's gradesheet and a navbar containing the 'messages' tab and an option to logout.
+
+The coursepage for each course has 4 tabs: 
+1. announcements (displays all the course announcements by the instructor)
+2. documents (displays all the documents uploaded by the instructor)
+3. grades (displays marksheet of the student containing summary of the marks scored by the student in each assessment of the course)
+4. quizzes (displays list of online tests/quizzes conducted in the course- a test can be attempted only once; the test can be attempted by clicking on it. After submitting the test the result page is shown)
+
+'Messages' leads to the personal messenger for the user, where the user can text another user via their student/instructor ID, a 6 digit number unique to every user.
+
+
+### Instructor View:
+The instructor home page is almost identical to the student home page, the only difference being that there is no 'gradesheet' section.
+
+The coursepage for each course that the instructor teaches has 4 tabs:
+1. announcements (displays all the course announcements by the instructor and the instructor can make new announcements as well)
+2. documents (displays all the documents uploaded by the instructor, with an option to upload more documents from the instructor's local machine)
+3. upload student grades (has options to upload marks for a particular assessment, as well as upload the final grades for the course, for a particular student)
+4. create a quiz (instructor can create an online MCQ test by first inputting the name and weightage of the test; then keep adding questions. Once all questions have been added, click on the `Finish` button)
+###### NOTE:
+Marks for online quizzes are automatically uploaded to a student's marksheet.
+
+
+
+### Admin View:
+This leads to Django's Admin site. 
+
+Upon creating a new User, they have to be registered in either the `Students` or `Instructors` model. New courses can be added in the `Courses` model. 
+Register students or instructors for a particular course using the `Student_registration table` or `Instructor_registration table` models.
+
+`Announcements` is for course-related announcements; `Messages` is for personal messages between two users.
+
+`Question Bank` is for creating quizzes; `Quizattempts` is for keeping track of whether students registered for a course have attempted a particular online test or not.
+
+`Grades` is for the final course grades of a student; `Marks` is for the marks scored by a student in a particular assessment of a course.
+
+`Document` is for all the documents uploaded for a course.
+
+
+
+
 # DevClub Assignment 5
 
 You have learnt about backend engineering with Django in our session. Now use it to create a web application by yourself!
